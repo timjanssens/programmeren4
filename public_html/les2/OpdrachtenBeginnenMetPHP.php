@@ -236,3 +236,37 @@ function array14()
     echo "The shortest array length is $smallest. The longest array length is $biggest.";
 }
 
+
+function array15()
+{
+
+    $numbers = range(11, 20);
+    shuffle($numbers);
+    foreach ($numbers as $value) {
+        echo "$value ";
+    }
+}
+
+function array16()
+{
+    $arr = array(1 => "A", 10 => "B", 5 => "C");
+    echo max(array_keys($arr));
+}
+
+
+function array17()
+{
+    $arr = array(0, 2, 3, 4, 0, 5, 6, 4, 3, 2, 0);
+
+
+    $arr_filtered = array_filter($arr, "RemoveZero");
+
+    function RemoveZero($value)
+    {
+        return ($value > 0);
+    }
+
+    echo min($arr_filtered);
+}
+
+
