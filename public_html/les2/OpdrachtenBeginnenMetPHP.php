@@ -171,4 +171,68 @@ function array09()
     echo '<br>';
 }
 
+function array10()
+{
+    echo "nog te doen - te moeilijk";
+}
+
+function array11()
+{
+    echo "nog te doen - te moeilijk";
+}
+
+function array12()
+{
+
+    $Color = array('A' => 'Blue', 'B' => 'Green', 'c' => 'Red');
+
+
+    echo "Values are in lower case.<br>";
+    $Color = array_flip($Color);
+    $Color = array_change_key_case($Color, 0);
+    $Color = array_flip($Color);
+    print_r($Color);
+
+    echo "Values are in upper case.<br>";
+    $Color = array_flip($Color);
+    $Color = array_change_key_case($Color, 1);
+    $Color = array_flip($Color);
+    print_r($Color);
+}
+
+function array13()
+{
+    for ($i = 200; $i <= 250; $i++) {
+        if ($i % 4 == 0) {
+            echo "$i, ";
+        }
+    }
+// echo implode(",",range(200,250,4))."\n"; oplossing W3
+}
+
+function array14()
+{
+
+
+    $characters = array("abcd", "abc", "de", "hjjj", "g", "wer");
+    $smallest = strlen($characters[0]);
+    $biggest = 0;
+
+//find the smallest amount of chars in value in array
+    foreach ($characters as $value) {
+        if ($smallest > strlen($value)) {
+            $smallest = strlen($value);
+        }
+    }
+
+
+//find the biggest amount of chars in value in array
+    foreach ($characters as $value) {
+        if ($biggest < strlen($value)) {
+            $biggest = strlen($value);
+        }
+    }
+
+    echo "The shortest array length is $smallest. The longest array length is $biggest.";
+}
 
