@@ -49,21 +49,126 @@ function array03()
 
 }
 
-function array04(){
+function array04()
+{
 
-$x = array(1, 2, 3, 4, 5);
-var_dump($x);
-echo "<br>";
+    $x = array(1, 2, 3, 4, 5);
+    var_dump($x);
+    echo "<br>";
 
 
-unset($x[3]);
-$x = array_values($x);
-var_dump($x);
+    unset($x[3]);
+    $x = array_values($x);
+    var_dump($x);
 }
 
-//function array05(){
+function array05()
+{
 
-$color = array(4 => 'white', 6 => 'green', 11=> 'red');
-echo array_values($color)[0];
+    $color = array(4 => 'white', 6 => 'green', 11 => 'red');
+    echo array_values($color)[0];
 
-//}
+}
+
+function array06()
+{
+    $jsonObj = '{"Title": "The Cuckoos Calling",
+"Author": "Robert Galbraith",
+"Detail":
+    {
+    "Publisher": "Little Brown"
+}}';
+
+    var_dump($jsonObj);
+    echo "<br>";
+
+    $jsonArray = json_decode($jsonObj, true);
+
+    var_dump($jsonArray);
+
+    foreach ($jsonArray as $key => $value) {
+        echo $key . ":" . $value;
+    }
+}
+
+
+function array07()
+{
+    $originalArray = array(1, 2, 3, 4, 5);
+
+    echo "Original array <br>";
+
+    foreach ($originalArray as $number) {
+        echo "$number ";
+    }
+
+    echo "<br>";
+
+    $insert = '$';
+
+    array_splice($originalArray, 3, 0, $insert);
+
+    echo "After inserting '$' the array is: <br>";
+    foreach ($originalArray as $number) {
+        echo "$number ";
+    }
+}
+
+function array08()
+{
+    $persons = array("Sophia" => "31", "Jacob" => "41", "William" => "39", "Ramesh" => "40");
+
+    asort($persons);
+
+    foreach ($persons as $name => $age) {
+        echo "$name : $age <br>";
+    }
+    echo "<br>";
+
+    ksort($persons);
+
+    foreach ($persons as $name => $age) {
+        echo "$name : $age <br>";
+    }
+    echo "<br>";
+
+    arsort($persons);
+
+    foreach ($persons as $name => $age) {
+        echo "$name : $age <br>";
+    }
+    echo "<br>";
+
+
+    krsort($persons);
+
+    foreach ($persons as $name => $age) {
+        echo "$name : $age <br>";
+    }
+    echo "<br>";
+}
+
+function array09()
+{
+    $recordedTemperatures = array(78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 81, 76, 73,
+        68, 72, 73, 75, 65, 74, 63, 67, 65, 64, 68, 73, 75, 79, 73);
+
+    echo "Average Temperature is: " . round(array_sum($recordedTemperatures) / count($recordedTemperatures), 1) . "<br>";
+
+
+    sort($recordedTemperatures);
+    echo "List of five lowest temperatures: ";
+    for ($i = 0; $i < 5; $i++) {
+        echo "$recordedTemperatures[$i], ";
+    }
+    echo '<br>';
+
+    rsort($recordedTemperatures);
+    echo "List of five highest temperatures: ";
+    for ($i = 0; $i < 5; $i++) {
+        echo "$recordedTemperatures[$i], ";
+    }
+    echo '<br>';
+}
+
+
