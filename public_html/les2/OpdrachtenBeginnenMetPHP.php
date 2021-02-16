@@ -70,7 +70,7 @@ function array05()
 
 }
 
-function array06()
+function array06() //nog aan te passen
 {
     $jsonObj = '{"Title": "The Cuckoos Calling",
 "Author": "Robert Galbraith",
@@ -254,19 +254,36 @@ function array16()
 }
 
 
-function array17()
+//function array17()
+//{
+//    $arr = array(0, 2, 3, 4, 0, 5, 6, 4, 3, 2, 0);
+//
+//
+//    $arr_filtered = array_filter($arr, "RemoveZero");
+//
+//    function RemoveZero($arr)
+//    {
+//        return ($arr > 0);
+//    }
+//
+//    echo min($arr_filtered);
+//}
+
+function array18()
 {
-    $arr = array(0, 2, 3, 4, 0, 5, 6, 4, 3, 2, 0);
-
-
-    $arr_filtered = array_filter($arr, "RemoveZero");
-
-    function RemoveZero($value)
+    function getNumber($number, $precision, $separator)
     {
-        return ($value > 0);
+        //get precision
+        $sol = number_format(floor($number * (pow(10, $precision))) / (pow(10, $precision)), $precision, $separator);
+        //choice seperator
+        //  $sol = number_format($sol, $precision,'$separator','');
+        return $sol;
     }
 
-    echo min($arr_filtered);
+    print_r(getNumber(1152.5556455, 4, ','));
+    echo "<br>";
+    print_r(getNumber(100.25781, 4, '.'));
+    echo "<br>";
+    print_r(getNumber(-2.9636, 3, ':'));
 }
-
 

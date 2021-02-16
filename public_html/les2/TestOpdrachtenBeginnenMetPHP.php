@@ -51,15 +51,15 @@ echo array15() . "</li>";
 
 echo "<li>";
 echo array16() . "</li>";
-
-echo "<li>";
-echo array17() . "</li>";
+//
+//echo "<li>";
+//echo array17() . "</li>";
 
 echo "<li>";
 echo array18() . "</li>";
-
-echo "<li>";
-echo array19() . "</li>";
-echo "</ol>";
+//
+//echo "<li>";
+//echo array19() . "</li>";
+//echo "</ol>";
 
 
