@@ -57,9 +57,26 @@ echo array16() . "</li>";
 
 echo "<li>";
 echo array18() . "</li>";
+
+echo "<li>";
+echo array19() . "</li>";
+
+
+echo "<li>";
+echo for_loop01() . "</li>";
+
+
+echo "<li>";
+echo for_loop02() . "</li>";
+echo "</ol>";
+
+
 //
 //echo "<li>";
 //echo array19() . "</li>";
 //echo "</ol>";
 
 
+
+
+echo "</ol>";

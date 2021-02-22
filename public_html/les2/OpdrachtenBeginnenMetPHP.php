@@ -287,3 +287,34 @@ function array18()
     print_r(getNumber(-2.9636, 3, ':'));
 }
 
+function array19()
+{
+
+}
+
+function for_loop01()
+{
+
+    for ($i = 1; $i <= 10; $i++) {
+        if ($i < 10) {
+            echo "$i - ";
+        } else {
+            echo "$i";
+        }
+    }
+}
+
+
+function for_loop02()
+{
+
+    $sum = 0;
+
+    for ($i = 0; $i <= 30; $i++) {
+        $sum += $i;
+    }
+
+    echo $sum;
+}
+
+
