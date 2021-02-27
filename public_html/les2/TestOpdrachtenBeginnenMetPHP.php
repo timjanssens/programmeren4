@@ -73,10 +73,36 @@ echo "</ol>";
 
 //
 //echo "<li>";
-//echo array19() . "</li>";
-//echo "</ol>";
+//echo array03() . "</li>";
+
+//
+//echo "<li>";
+//echo array04() . "</li>";
+
+//
+//echo "<li>";
+//echo array05() . "</li>";
+
+//
+//echo "<li>";
+//echo array06() . "</li>";
+
+//
+//echo "<li>";
+//echo array07() . "</li>";
+
+//
+//echo "<li>";
+//echo array08() . "</li>";
 
 
+//
+//echo "<li>";
+//echo array09() . "</li>";
+
+//
+//echo "<li>";
+//echo array10() . "</li>";
 
 
 echo "</ol>";

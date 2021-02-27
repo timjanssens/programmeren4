@@ -87,7 +87,14 @@ function array06() //nog aan te passen
     var_dump($jsonArray);
 
     foreach ($jsonArray as $key => $value) {
-        echo $key . ":" . $value;
+        if (is_array($value)) {
+            foreach ($value as $subKey => $subValue) {
+                echo $subKey . ":" . $subValue . "</br>";
+            }
+        } else {
+            echo $key . ":" . $value . "</br>";
+
+        }
     }
 }
 
@@ -254,20 +261,20 @@ function array16()
 }
 
 
-//function array17()
-//{
-//    $arr = array(0, 2, 3, 4, 0, 5, 6, 4, 3, 2, 0);
-//
-//
-//    $arr_filtered = array_filter($arr, "RemoveZero");
-//
-//    function RemoveZero($arr)
-//    {
-//        return ($arr > 0);
-//    }
-//
-//    echo min($arr_filtered);
-//}
+function array17()
+{
+    $arr = array(0, 2, 3, 4, 0, 5, 6, 4, 3, 2, 0);
+
+
+    $arr_filtered = array_filter($arr, "RemoveZero");
+
+    function RemoveZero($arr)
+    {
+        return ($arr > 0);
+    }
+
+    echo min($arr_filtered);
+}
 
 function array18()
 {
