@@ -96,6 +96,24 @@ function array06() //nog aan te passen
 
         }
     }
+
+    //werken met recursie => betere oplossing want hier kunnen meerdere arrays in arrays zitten
+    function echoArrayRecursiveWithKey($array)
+    {
+        foreach ($array as $key => $value) {
+            //If $value is an array.
+            if (is_array($value)) {
+                //We need to loop through it.
+                echoArrayRecursiveWithKey($value);
+            } else {
+                //It is not an array, so print it out.
+                echo "$key: $value <br>";
+            }
+        }
+    }
+
+    echoArrayRecursiveWithKey($jsonArray);
+
 }
 
 
@@ -180,7 +198,87 @@ function array09()
 
 function array10()
 {
-    echo "nog te doen - te moeilijk";
+
+
+
+
+    function numbersToAbacus($numbers)
+    {
+        $maxNumber = max($numbers);
+        // $row = str_repeat('_', $maxNumber);
+        $abacus = array();
+        foreach ($numbers as $number) {
+            $abacus[] = str_repeat('*', $number) . str_repeat('_', $maxNumber - $number);
+        }
+        return $abacus;
+    }
+
+    function rotateAbacus($abacus)
+    {
+        $rotatedAbacus = array_fill(0, strlen($abacus[0]), str_repeat('=', count($abacus) - 1,));
+        for ($i = 0; $i < count($abacus); $i++) {
+            for ($j = 0; $j < strlen($abacus[$i]); $j++) {
+                $rotatedAbacus[$j][$i] = $abacus[$i][$j];
+            }
+        }
+        // var_dump($rotatedAbacus);
+        return $rotatedAbacus;
+    }
+
+    function gravitateAbacus($abacus)
+    {
+        $maxNumber = strlen($abacus[0]);
+        for ($i = 0; $i < count($abacus); $i++) {
+            $number = substr_count($abacus[$i], '*');
+            $abacus[$i] = str_repeat('*', $number) . str_repeat('_', $maxNumber - $number);
+        }
+        return $abacus;
+    }
+
+    function abacusToNumbers($abacus)
+    {
+        $numbers = array();
+        for ($i = count($abacus) - 1; $i >= 0; $i--) {
+            $number = substr_count($abacus[$i], '*');
+            $numbers[] = $number;
+        }
+        return $numbers;
+    }
+
+
+    function echoArray($numbers)
+    {
+        foreach ($numbers as $number) {
+            echo "$number<br/>";
+        }
+    }
+
+    function echoAbacus($abacus)
+    {
+        foreach ($abacus as $row) {
+            echo "$row<br/>";
+        }
+    }
+
+    $sampleNumbers = array(10, 5, 3, 8, 20, 7, 4, 1, 3, 12, 14, 6, 4, 1, 1);
+    $sampleAbacus = numbersToAbacus($sampleNumbers);
+    $rotatedAbacus = rotateAbacus($sampleAbacus);
+    $gravitatedAbacus = gravitateAbacus($rotatedAbacus);
+    $rotatedBackAbacus = rotateAbacus($gravitatedAbacus);
+    $sortedNumbers = abacusToNumbers($rotatedBackAbacus);
+
+    echo echoArray($sampleNumbers);
+    echo 'Sample Abacus' . '</br>';
+    echo echoAbacus($sampleAbacus);
+    echo 'Rotate abacus' . '</br>';
+    echo echoAbacus($rotatedAbacus);
+    echo 'Gravitate abacus' . '</br>';
+    echo echoAbacus($gravitatedAbacus);
+    echo 'RotatedBack abacus' . '</br>';
+    echo echoAbacus($rotatedBackAbacus);
+    echo 'Abacus to numbers' . '</br>';
+    echo echoAbacus($sortedNumbers);
+
 }
 
 function array11()
@@ -280,10 +378,10 @@ function array18()
 {
     function getNumber($number, $precision, $separator)
     {
-        //get precision
+//get precision
         $sol = number_format(floor($number * (pow(10, $precision))) / (pow(10, $precision)), $precision, $separator);
-        //choice seperator
-        //  $sol = number_format($sol, $precision,'$separator','');
+//choice seperator
+//  $sol = number_format($sol, $precision,'$separator','');
         return $sol;
     }
 
