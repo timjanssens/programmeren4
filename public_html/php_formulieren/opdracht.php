@@ -142,9 +142,10 @@ function test_input($data)
 <body>
 
 
-<p>Vul het registratieformulier in. Velden met een <span class="error">*</span> zijn verplicht.</p>
+
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <p>Vul het registratieformulier in. Velden met een <span class="error">*</span> zijn verplicht.</p>
     <fieldset>
         <legend>Accountgegevens</legend>
         <div class="row">
@@ -200,7 +201,7 @@ function test_input($data)
 
 
     <fieldset>
-        <legend>Addresgegevens</legend>
+        <legend>Adresgegevens</legend>
         <div class="row">
             <div class="col-25">
                 <label for="address1">Adres 1 <span class="error">*</span></label>
