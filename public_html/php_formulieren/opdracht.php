@@ -1,4 +1,6 @@
 <?php
+
+
 $firstnameErr = $lastnameErr = $mailErr = $password1Err = $password2Err = $address1Err
     = $birthdayErr = $postalcodeErr = $cityErr = $sexErr = $passwordNotMatchErr = "";
 $firstname = $lastname = $mail = $password1 = $password2 = $address1 = $address2 = $country
@@ -43,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($_POST["password1"])) {
         $password1Err = "Paswoord is verplicht";
-    } else if ( !$uppercase || !$lowercase || !$number || !$specialChars || strlen($password1) < 8) { //
+    } else if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password1) < 8) { //
         $passwordNotMatchErr = 'Paswoord moet minstens 8 tekens bevateene en moet een hoofletter, een nummer en een speciaal teken bevatten.';
     } else {
         $password1 = test_input($_POST["password1"]);
@@ -106,19 +108,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["sex"])) {
         $sexErr = "Geslacht is verplicht";
     } else {
-        $sex = test_input($_POST["sex"]);
+        $sex = $_POST["sex"];
     }
 
+    if ($_POST['countryCode'] == "") {
+        $country = "";
+    } else {
+        $country = test_input($_POST["countryCode"]);
+    }
 
+    if ($_POST['faculty'] == "") {
+        $faculty = "";
+    } else {
+        $faculty = test_input($_POST["faculty"]);
+    }
+
+    if ($_POST['course'] == "") {
+        $course = "";
+    } else {
+        $course = test_input($_POST["course"]);
+    }
+
+//
+//    if ($lastnameErr == "" && $firstnameErr == "") {
+//        header('location: visualiseren-form-data.php');
+//        exit();
+//    }
 }
 
-function test_input($data)
-{
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
+    function test_input($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 
 ?>
 
@@ -142,9 +166,9 @@ function test_input($data)
 <body>
 
 
+<form method="Post" action="visualiseren-form-data.php">
+<!--    --><?php //echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>
 
-
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
     <p>Vul het registratieformulier in. Velden met een <span class="error">*</span> zijn verplicht.</p>
     <fieldset>
         <legend>Accountgegevens</legend>
@@ -242,13 +266,20 @@ function test_input($data)
                 <label for="countryCode">Kies een land <span class="error">*</span></label>
             </div>
             <div class="col-75">
-                <select id="countryCode" name="countryCode">
-                    <option value="BE">Belgie</option>
-                    <option value="DE">Duitsland</option>
-                    <option value="FR">Frankrijk</option>
-                    <option value="LU">Luxemburg</option>
-                    <option value="NL">Nederland</option>
-                    <option value="UK">Verenigd Koninkrijk</option>
+                <select id="countryCode" name="countryCode" value="<?php echo $country; ?>">
+                    <option <?php if (isset($country) && $country == "BE") echo "selected"; ?> value="BE">Belgie
+                    </option>
+                    <option <?php if (isset($country) && $country == "DE") echo "selected"; ?> value="DE">Duitsland
+                    </option>
+                    <option <?php if (isset($country) && $country == "FR") echo "selected"; ?> value="FR">Frankrijk
+                    </option>
+                    <option <?php if (isset($country) && $country == "LU") echo "selected"; ?> value="LU">Luxemburg
+                    </option>
+                    <option <?php if (isset($country) && $country == "NL") echo "selected"; ?> value="NL">Nederland
+                    </option>
+                    <option <?php if (isset($country) && $country == "UK") echo "selected"; ?> value="UK">Verenigd
+                        Koninkrijk
+                    </option>
                 </select>
             </div>
         </div>
@@ -314,9 +345,15 @@ function test_input($data)
             </div>
             <div class="col-75">
                 <select id="faculty" name="faculty">
-                    <option value="PRO">Graduaat Programmeren</option>
-                    <option value="SNB">Graduaat SNB</option>
-                    <option value="IOT">Graduaat IOT</option>
+                    <option <?php if (isset($faculty) && $faculty == "PRO") echo "selected"; ?> value="PRO">Graduaat
+                        Programmeren
+                    </option>
+                    <option <?php if (isset($faculty) && $faculty == "SNB") echo "selected"; ?> value="SNB">Graduaat
+                        SNB
+                    </option>
+                    <option <?php if (isset($faculty) && $faculty == "IOT") echo "selected"; ?> value="IOT">Graduaat
+                        IOT
+                    </option>
                 </select>
             </div>
         </div>
@@ -326,11 +363,20 @@ function test_input($data)
             </div>
             <div class="col-75">
                 <select id="course" name="course" multiple>
-                    <option value="Pro">Programmeren</option>
-                    <option value="Webtech">Webtechnologie</option>
-                    <option value="CMSIntro">CMS Intro</option>
-                    <option value="CMSDev">CMS Development</option>
-                    <option value="OO">OO Programmeren</option>
+                    <option <?php if (isset($course) && $course == "Pro") echo "selected"; ?> value="Pro">Programmeren
+                    </option>
+                    <option <?php if (isset($course) && $course == "Webtech") echo "selected"; ?> value="Webtech">
+                        Webtechnologie
+                    </option>
+                    <option <?php if (isset($course) && $course == "CMSIntro") echo "selected"; ?> value="CMSIntro">CMS
+                        Intro
+                    </option>
+                    <option <?php if (isset($course) && $course == "CMSDev") echo "selected"; ?> value="CMSDev">CMS
+                        Development
+                    </option>
+                    <option <?php if (isset($course) && $course == "OO") echo "selected"; ?> value="OO">OO
+                        Programmeren
+                    </option>
                 </select>
             </div>
         </div>
