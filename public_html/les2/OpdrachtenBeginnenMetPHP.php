@@ -358,9 +358,7 @@ function array16()
     echo max(array_keys($arr));
 }
 
-
-function array17()
-{
+function array17(){
     $arr = array(0, 2, 3, 4, 0, 5, 6, 4, 3, 2, 0);
 
 
