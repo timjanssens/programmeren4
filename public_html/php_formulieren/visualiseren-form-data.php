@@ -58,11 +58,22 @@
         <li>Tevredenheid:
             <?php echo isset($_POST['satisfied']) ? $_POST['satisfied'] : 'Tevredenheid niet opgegeven!'; ?>
         </li>
+        <li>Geslacht:
+            <?php echo isset($_POST['sex']) ? $_POST['sex'] : 'Geslacht niet opgegeven!'; ?>
+        </li>
         <li>Richting:
             <?php echo isset($_POST['faculty']) ? $_POST['faculty'] : 'Richting niet opgegeven!'; ?>
         </li>
         <li>Cursussen:
-            <?php echo isset($_POST['course']) ? $_POST['course'] : 'Cursussen niet opgegeven!'; ?>
+            <?php
+            $courses = '';
+            if(!empty($_POST['course'])) {
+                foreach ($_POST['course'] as $item) {
+                    $courses = $courses . " $item";
+                }
+            }
+             echo isset($_POST['course']) ? $courses : 'Cursussen niet opgegeven!'; ?>
+
         </li>
     </ol>
 </article>

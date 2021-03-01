@@ -123,26 +123,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $faculty = test_input($_POST["faculty"]);
     }
 
-    if ($_POST['course'] == "") {
+//    if ($_POST['course'] == "") {
+    if (empty($_POST['course'])) { //check if array is empty
         $course = "";
     } else {
-        $course = test_input($_POST["course"]);
+        $course = $_POST["course"];
     }
 
-//
+//     fomrulier laden wanneer alle velden correct zijn ingevuld
 //    if ($lastnameErr == "" && $firstnameErr == "") {
 //        header('location: visualiseren-form-data.php');
 //        exit();
 //    }
 }
 
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
 ?>
 
@@ -166,8 +167,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 
-<form method="Post" action="visualiseren-form-data.php">
-<!--    --><?php //echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>
+<!--<form method="Post" action="--><?php ////echo htmlspecialchars($_SERVER["PHP_SELF"]); ?><!--">-->
+    <form method="Post" action="visualiseren-form-data.php">
+
 
     <p>Vul het registratieformulier in. Velden met een <span class="error">*</span> zijn verplicht.</p>
     <fieldset>
@@ -362,7 +364,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="course">Kies een vak</label>
             </div>
             <div class="col-75">
-                <select id="course" name="course" multiple>
+                <select id="course" name="course[]" multiple>
                     <option <?php if (isset($course) && $course == "Pro") echo "selected"; ?> value="Pro">Programmeren
                     </option>
                     <option <?php if (isset($course) && $course == "Webtech") echo "selected"; ?> value="Webtech">
