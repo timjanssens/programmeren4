@@ -130,11 +130,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $course = $_POST["course"];
     }
 
-//     fomrulier laden wanneer alle velden correct zijn ingevuld
-//    if ($lastnameErr == "" && $firstnameErr == "") {
-//        header('location: visualiseren-form-data.php');
-//        exit();
-//    }
+  //   fomrulier laden wanneer alle velden correct zijn ingevuld
+    if ($lastnameErr == "" && $firstnameErr == "") {
+        header('location: visualiseren-form-data.php');
+        exit();
+    }
 }
 
 function test_input($data)
@@ -167,8 +167,8 @@ function test_input($data)
 <body>
 
 
-<!--<form method="Post" action="--><?php ////echo htmlspecialchars($_SERVER["PHP_SELF"]); ?><!--">-->
-    <form method="Post" action="visualiseren-form-data.php">
+<form method="Post" action="<?php //echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+<!--    <form method="Post" action="visualiseren-form-data.php">-->
 
 
     <p>Vul het registratieformulier in. Velden met een <span class="error">*</span> zijn verplicht.</p>
