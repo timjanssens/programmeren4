@@ -9,4 +9,4 @@
 # Visual Code
 #
 .vscode/
-config.php
+dbConfig.php
