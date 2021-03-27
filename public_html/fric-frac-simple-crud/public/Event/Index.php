@@ -19,7 +19,7 @@
 <section class="show-room entity">
     <div class="detail">
         <nav class="command-panel">
-            <h2 class="banner">Eventcategory</h2>
+            <h2 class="banner">Event</h2>
             <a href="InsertingOne.php" class="tile">Inserting One</a>
         </nav>
         <fieldset></fieldset>
