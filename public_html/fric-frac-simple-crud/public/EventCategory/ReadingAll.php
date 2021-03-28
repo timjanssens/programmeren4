@@ -9,5 +9,15 @@
             <th>Naam</th>
             <th>Id</th>
         </tr>
+        <tr>
+            <td>Select</td>
+            <td>Naam</td>
+            <td>Id</td>
+        </tr>
+        <tr>
+            <td>Select</td>
+            <td>Naam</td>
+            <td>Id</td>
+        </tr>
     </table>
 </aside>

@@ -29,15 +29,34 @@
             <nav class="command-panel">
                 <h2 class="banner">Event category</h2>
                 <div class="links">
+                    <a class="tile" href="#">
+                        <span aria-hidden="true" class="icon-pencil"></span>
+                        <span class="screen-reader-text">updating</span>
+                    </a>
                     <a class="tile" href="InsertingOne.php">
                         <span aria-hidden="true" class="icon-plus"></span>
-                        <span class="screen-reader-text">Event category</span>
+                        <span class="screen-reader-text">Insert</span>
+                    </a>
+                    <a class="tile" href="#">
+                        <span aria-hidden="true" class="icon-bin"></span>
+                        <span class="screen-reader-text">Delete</span>
+                    </a>
+                    <a class="tile" href="Index.php">
+                        <span aria-hidden="true" class="icon-cross"></span>
+                        <span class="screen-reader-text">Cancel</span>
                     </a>
                 </div>
             </nav>
 
             <fieldset>
-
+                <div class="row">
+                    <div class="col-25">
+                        <label for="Name">Naam</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" required id="Name" name="Name"/>
+                    </div>
+                </div>
 
             </fieldset>
 
