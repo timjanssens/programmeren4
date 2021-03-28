@@ -1,7 +1,10 @@
 @font-face {
     font-family: 'robotolight';
     src: url('fonts/roboto-fontfacekit/roboto_light_macroman/Roboto-Light-webfont.eot');
-    src: url('fonts/roboto-fontfacekit/roboto_light_macroman/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/roboto-fontfacekit/roboto_light_macroman/Roboto-Light-webfont.woff') format('woff'), url('fonts/roboto-fontfacekit/roboto_light_macroman/Roboto-Light-webfont.ttf') format('truetype'), url('fonts/roboto-fontfacekit/roboto_light_macroman/Roboto-Light-webfont.svg#robotoregular') format('svg');
+    src: url('fonts/roboto-fontfacekit/roboto_light_macroman/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/roboto-fontfacekit/roboto_light_macroman/Roboto-Light-webfont.woff') format('woff'),
+    url('fonts/roboto-fontfacekit/roboto_light_macroman/Roboto-Light-webfont.ttf') format('truetype'),
+    url('fonts/roboto-fontfacekit/roboto_light_macroman/Roboto-Light-webfont.svg#robotoregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -92,8 +95,9 @@ body, html {
     width: 600px;
 }
 
+
 .index .tile:nth-child(4) {
-    background-image: url("../image/informatieve-tegel-achtergrond.jpg");
+    background-image: url("../image/tmlBackground.jpg");
     background-size: cover;
     color: rgb(250, 240, 230);
     /* linnen */
@@ -106,7 +110,8 @@ body, html {
     /* linnen */
     background-color: rgb(65, 74, 76);
     /* outer space */
-    padding: 0.5em 0 0 1em;
+    padding: 2em 0 0 1em;
+    text-align: center;
 }
 
 /* accessability */
@@ -124,3 +129,4 @@ body, html {
     display: inline-block;
     /* Fix for clickability issue in WebKit */
 }
+
