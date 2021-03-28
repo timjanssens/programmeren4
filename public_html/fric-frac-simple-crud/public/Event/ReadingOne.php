@@ -30,8 +30,16 @@
                 <h2 class="banner">Event topic</h2>
                 <div class="links">
                     <a class="tile" href="#">
-                        <span aria-hidden="true" class="icon-floppy-disk"></span>
+                        <span aria-hidden="true" class="icon-pencil"></span>
+                        <span class="screen-reader-text">updating</span>
+                    </a>
+                    <a class="tile" href="InsertingOne.php">
+                        <span aria-hidden="true" class="icon-plus"></span>
                         <span class="screen-reader-text">Insert</span>
+                    </a>
+                    <a class="tile" href="#">
+                        <span aria-hidden="true" class="icon-bin"></span>
+                        <span class="screen-reader-text">Delete</span>
                     </a>
                     <a class="tile" href="Index.php">
                         <span aria-hidden="true" class="icon-cross"></span>
