@@ -108,3 +108,19 @@ body, html {
     /* outer space */
     padding: 0.5em 0 0 1em;
 }
+
+/* accessability */
+
+.screen-reader-text {
+    /* Reusable, toolbox kind of class
+        voor screen readers, op die manier
+        kunnen de readers lezen waarvoor
+        de knop staat; de tekst is zelf
+        niet zichtbaar op het scherm door negatieve
+        waarden toe te kennen aan top en left */
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    display: inline-block;
+    /* Fix for clickability issue in WebKit */
+}
