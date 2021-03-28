@@ -7,31 +7,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fric-frac simple CRUD</title>
+    <link rel="stylesheet" type="text/css" href="../css/icon-font.css">
+    <link rel="stylesheet" type="text/css" href="../css/app.css">
 </head>
-<body class="editor">
+<body class="page">
+
 <header class="page-header">
     <nav class="control-panel">
-        <a href="/index.php" class="tile">Admin</a>
+        <a class="tile" href="/index.php">
+            <span aria-hidden="true" class="icon-menu"></span>
+            <span class="screen-reader-text">Admin index</span>
+        </a>
     </nav>
     <h1 class="banner">Fric-frac</h1>
 </header>
-<section class="show-room entity">
+
+<main>
+<section class="detail">
     <form id="form" method="post" action="createOne" class="detail">
         <nav class="command-panel">
-            <h2 class="banner">EventTopic</h2>
-            <button type="submit" value="insert" name="uc" class='tile'>Insert</button>
-            <a href="Index.php" class="tile">Annuleren</a>
-        </nav>
+            <h2 class="banner">Event topic</h2>
+            <div class="links">
+                <a class="tile" href="#">
+                    <span aria-hidden="true" class="icon-floppy-disk"></span>
+                    <span class="screen-reader-text">Insert</span>
+                </a>
+                <a class="tile" href="Index.php">
+                    <span aria-hidden="true" class="icon-cross"></span>
+                    <span class="screen-reader-text">Cancel</span>
+                </a>
+            </div>
+         </nav>
+
         <fieldset>
-            <div>
-                <label for="Name">Naam</label>
-                <input type="text" required id="Name" name="Name" />
+            <div class="row">
+                <div class="col-25">
+                    <label for="Name">Naam</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" required id="Name" name="Name" />
+                </div>
             </div>
         </fieldset>
-        <div id="feedback"></div>
+
     </form>
-    <?php include('ReadingAll.php'); ?>
+
+    <div id="feedback">
+
+    </div>
 </section>
+    <aside>
+    <?php include('ReadingAll.php'); ?>
+    </aside>
+</main>
+
+
 <footer class="page-footer">
     <p>&copy Tim Janssens</p>
     <p>Opdracht Programmeren 4</p>

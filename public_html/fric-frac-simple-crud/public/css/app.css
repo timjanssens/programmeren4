@@ -21,6 +21,7 @@ body, html {
     width: 100%;
 }
 
+
 .page {
     display: flex;
     flex-direction: column;
@@ -103,15 +104,30 @@ body, html {
     /* linnen */
 }
 
-.page-footer {
+.command-panel [class^="icon-"] {
+    font-size: 180%;
+    color: rgb(226, 69, 16);
+    /* linnen */
+
+    text-decoration: none;
+}
+.command-panel a {
+     text-decoration: none;
+    padding: 10px;
+}
+
+
+footer {
     width: 100%;
     min-height: 10%;
     color: rgb(250, 240, 230);
     /* linnen */
     background-color: rgb(65, 74, 76);
     /* outer space */
-    padding: 2em 0 0 1em;
+    padding: 1em 0 0 1em;
     text-align: center;
+    position: absolute;
+    bottom: 0;
 }
 
 /* accessability */
@@ -129,4 +145,119 @@ body, html {
     display: inline-block;
     /* Fix for clickability issue in WebKit */
 }
+
+
+
+/*table*/
+
+table {
+    border-spacing: 0;
+    width: 100%; /* whichever width you want */
+    /*margin-left: 20%;*/ /* minus the amount to make it 100% */
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(249, 246, 244);
+}
+tr:nth-child(odd) {
+   background-color: rgb(255,246,244);
+}
+
+tr:hover {
+    background-color: #faebd7;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(226, 69, 16);
+    color: rgb(250, 240, 230);
+}
+
+/*form*/
+fieldset {
+    margin-top: 10px;
+    background-color:#fff8e7;
+    border: 0px solid #BFBFBF;
+    box-shadow: 7px 7px 4px #F9F6F4;
+    padding: 15px;
+    font-size: large;
+}
+
+input[type=text], input[type=date], select, textarea, input[type=number] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+
+.col-25, .col-75 {
+    width: 100%;
+    margin-top: 0;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.command-panel {
+    background-color: #faf0e6 ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    height: 50px;
+    padding: 10px;
+    color: #e24510;
+}
+
+
+@media (min-width: 800px) {
+
+
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "section aside";
+    }
+
+    section {
+        margin: 50px 25px 50px 5px;
+    }
+
+    aside {
+        margin: 27px 5px 50px 25px;
+    }
+
+
+    .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+    }
+
+    .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
+
+}
+
 
