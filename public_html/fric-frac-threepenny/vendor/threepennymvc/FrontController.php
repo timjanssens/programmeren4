@@ -5,10 +5,10 @@ namespace ThreepennyMVC;
 
 
 class FrontController
-{
 
+{
     public static function getRouteData($uri, $namespaceName = '\\',
-                                    $controllerName = 'Home', $actionMethodName = 'index')
+                                        $controllerName = 'Home', $actionMethodName = 'index')
     {
         $controllerClassName =  "{$namespaceName}\\Controllers\\{$controllerName}Controller";
         $parameterValue = -1;
@@ -53,14 +53,14 @@ class FrontController
 
     public static function dispatch($action)
     {
+        // https://stackoverflow.com/questions/4646786/dynamic-lang-runtime-vs-reflection
         try {
             $reflection = new \ReflectionClass($action['controllerClassName']);
             try {
                 $actionMethod = new \ReflectionMethod($action['controllerClassName'],
                     $action['actionMethodName']);
                 $controller = $reflection->newInstance();
-                return $actionMethod->invokeArgs($controller,
-                    array($action['parameterValue']));
+                return $actionMethod->invokeArgs($controller, array($action['parameterValue']));
             } catch (\ReflectionException $e) {
                 $actionMethodName = $action['actionMethodName'];
                 echo "Method $actionMethodName does not exist!";
@@ -72,5 +72,4 @@ class FrontController
             return false;
         }
     }
-
 }

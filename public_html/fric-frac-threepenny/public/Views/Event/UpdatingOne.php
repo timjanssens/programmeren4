@@ -59,7 +59,7 @@
                 <?php
                 foreach ($model['listEventCategory'] as $eventCategory) {
                     ?>
-                    <option value="<?php echo $eventTopic['Id'] ?>"
+                    <option value="<?php echo $eventCategory['Id'] ?>"
                     <?php echo $model['row']['EventCategoryId'] === $eventCategory['Id'] ? 'selected = "selected"' : '';?>>
                     <?php echo $eventCategory['Name'] ?></option>
                 <?php } ?>
