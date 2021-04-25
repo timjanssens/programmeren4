@@ -4,6 +4,7 @@ include_once('../vendor/threepennymvc/FrontController.php');
 include_once('../vendor/threepennymvc/Controller.php');
 include_once('Controllers/AdminController.php');
 include_once('Controllers/EventController.php');
+include_once('Controllers/EventCategoryController.php');
 $route = FrontController::getRouteData($_SERVER['REQUEST_URI'], 'Fricfrac', 'Admin', 'index');
 $view = FrontController::dispatch($route);
 ?>

@@ -1,6 +1,6 @@
 <h1><?php echo $model['title']; ?></h1>
 <article class="index">
-    <a class="tile" href="/EventCategory/index">
+    <a class="tile" href="EventCategory/Index">
         <span aria-hidden="true" class="icon-bookmark"></span>
         <span class="screen-reader-text">Event Category</span>
         Event Category
