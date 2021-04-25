@@ -4,7 +4,7 @@ use ThreepennyMVC\FrontController;
 include_once('../vendor/threepennymvc/FrontController.php');
 // default namespace is root \
 // otherwise specify it as argument
-$route = FrontController::splitUri($_SERVER['REQUEST_URI'], 'Fricfrac', 'Admin', 'index');
+$route = FrontController::getRouteData($_SERVER['REQUEST_URI'], 'Fricfrac', 'Admin', 'index');
 ?>
 <!DOCTYPE html>
 <html lang="nl">
