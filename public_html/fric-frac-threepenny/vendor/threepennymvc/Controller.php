@@ -1,15 +1,17 @@
 <?php
-
+/**
+ * Created by ModernWays
+ * User: Jef Inghelbrecht
+ * Date: 23/02/2020
+ * Time: 10:32
+ */
 
 namespace ThreepennyMVC;
-
 
 class Controller
 {
     public function view($model = null, $path = null)
     {
-        // als het pad naar de view niet werd opgegeven en dus null is,
-        // staat het in een submap met de naam Views/Index.php
         if (!isset($path)) {
             // zoals in ASP.NET gaan we er van uit dat
             // de view staat in een map met de naam
@@ -25,5 +27,4 @@ class Controller
         };
         return $view;
     }
-
 }

@@ -1,10 +1,12 @@
 <?php
 use ThreepennyMVC\FrontController;
-include_once('../vendor/threepennymvc/FrontController.php');
-include_once('../vendor/threepennymvc/Controller.php');
-include_once('Controllers/AdminController.php');
-include_once('Controllers/EventController.php');
-include_once('Controllers/EventCategoryController.php');
+include ('../vendor/threepennymvc/FrontController.php');
+include ('../vendor/threepennymvc/Controller.php');
+include ('../vendor/anormapart/Dal.php');
+include ('../vendor/anormapart/Helpers.php');
+include ('Controllers/AdminController.php');
+include ('Controllers/EventController.php');
+include ('Controllers/EventCategoryController.php');
 $route = FrontController::getRouteData($_SERVER['REQUEST_URI'], 'Fricfrac', 'Admin', 'index');
 $view = FrontController::dispatch($route);
 ?>
@@ -20,7 +22,7 @@ $view = FrontController::dispatch($route);
 <body class="page">
 <header class="page-header">
     <nav class="control-panel">
-        <a href="/index.php" class="tile">
+        <a href="/Admin/index" class="tile">
             <span class="icon-menu"></span>
             <span class="screen-reader-text">Admin index</span>
         </a>
