@@ -11,6 +11,7 @@ include ('Controllers/EventCategoryController.php');
 include ('Controllers/EventTopicController.php');
 include ('Controllers/PersonController.php');
 include ('Controllers/RoleController.php');
+include ('Controllers/UserController.php');
 $route = FrontController::getRouteData($_SERVER['REQUEST_URI'], 'Fricfrac', 'Admin', 'index');
 $view = FrontController::dispatch($route);
 ?>
