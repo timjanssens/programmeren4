@@ -23,7 +23,7 @@ class EventCategoryController extends \ThreepennyMVC\Controller
 
     public function createOne() {
         $model = array('tableName' => 'EventCategory',
-            'error' => 'Geen');
+            'error' => 'Geen error');
         $eventCategory = array (
             "Name" => $_POST['Name']);
 

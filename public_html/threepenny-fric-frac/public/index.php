@@ -31,9 +31,9 @@ $view = FrontController::dispatch($route);
     <h1 class="banner">Fric-frac</h1>
 </header>
 <?php echo $view();?>
-<!--<footer class="page-footer">-->
-<!--    <p>&copy ModernWays 2020</p>-->
-<!--    <p>Opdracht Programmeren 4</p>-->
-<!--</footer>-->
+<footer class="page-footer">
+    <p>&copy Tim Janssens</p>
+    <p>Opdracht Programmeren 4</p>
+</footer>
 </body>
 </html>

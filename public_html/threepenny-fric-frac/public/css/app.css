@@ -95,6 +95,7 @@ body, html {
 
 .index .tile._2x1 {
     width: 600px;
+    margin-bottom: 150px;
 }
 
 
@@ -108,13 +109,13 @@ body, html {
 .command-panel [class^="icon-"] {
     font-size: 180%;
     color: rgb(226, 69, 16);
-    /* linnen */
 
-    text-decoration: none;
+
+
 }
 .command-panel a {
      text-decoration: none;
-    padding: 10px;
+    padding: 5px;
 }
 
 
@@ -147,8 +148,13 @@ footer {
     /* Fix for clickability issue in WebKit */
 }
 
-
-
+td .tile {
+    color:black;
+    padding-left: 10px;
+    }
+td a.tile {
+    text-decoration: none;
+}
 /*table*/
 
 table {
