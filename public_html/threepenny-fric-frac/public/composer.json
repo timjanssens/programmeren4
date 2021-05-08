@@ -1,0 +1,19 @@
+{
+    "name": "modernways/fric-frac",
+    "description": "Event Calendar",
+    "type": "app",
+    "authors": [
+        {
+            "name": "Jef Inghelbrecht",
+            "email": "jef@modernways.be"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ThreepennyMVC\\": "vendor/threepennymvc",
+            "AnOrmApart\\" : "vendor/anormapart"
+        }
+    }
+}
