@@ -99,7 +99,7 @@ body, html {
 }
 
 
-.index .tile:nth-child(4) {
+.index .tile:nth-child(7) {
     background-image: url("../image/tmlBackground.jpg");
     background-size: cover;
     color: rgb(250, 240, 230);
@@ -197,7 +197,8 @@ fieldset {
     font-size: large;
 }
 
-input[type=text], input[type=date], select, textarea, input[type=number] , input[type=url]{
+input[type=text], input[type=date], select, textarea, input[type=number] , input[type=url]
+, input[type=email]{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;

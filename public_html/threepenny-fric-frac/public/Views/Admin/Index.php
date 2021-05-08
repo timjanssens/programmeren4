@@ -13,5 +13,18 @@
         <span aria-hidden="true" class="icon-power"></span>
         <span class="screen-reader-text">Event</span>
         Event Index</a>
+    <a class="tile" href="/Person/Index">
+        <span aria-hidden="true" class="icon-user"></span>
+        <span class="screen-reader-text">Person</span>
+        Person
+    </a>
+    <a class="tile" href="/Role/Index">
+        <span aria-hidden="true" class="icon-user-check"></span>
+        <span class="screen-reader-text">Role</span>
+        Role</a>
+    <a class="tile" href="/User/Index">
+        <span aria-hidden="true" class="icon-users"></span>
+        <span class="screen-reader-text">User</span>
+        User</a>
     <div class="tile _2x1">Informatieve tegel</div>
 </article>

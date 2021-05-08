@@ -22,7 +22,6 @@ class Controller
             $path = 'Views' . DIRECTORY_SEPARATOR . $folderName . DIRECTORY_SEPARATOR . $fileName . '.php';
         }
         $view = function () use ($model, $path) {
-            // echo $path;
             include($path);
         };
         return $view;
