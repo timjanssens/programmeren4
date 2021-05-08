@@ -13,7 +13,8 @@
     "autoload": {
         "psr-4": {
             "ThreepennyMVC\\": "vendor/threepennymvc",
-            "AnOrmApart\\" : "vendor/anormapart"
+            "AnOrmApart\\" : "vendor/anormapart",
+            "FricFrac\\Controllers\\" : "../Controllers"
         }
     }
 }

@@ -33,7 +33,8 @@ class EventCategoryController extends \ThreepennyMVC\Controller
             $model['message'] = "Oeps er is iets fout gelopen! Kan {$eventCategory['Name']} niet toevoegen aan EventCategory";
             $model['error'] = \AnOrmApart\Dal::getMessage();
         }
-        return $this->view($model, 'Views/EventCateory/Index.php');
+        $model['list'] = \AnOrmApart\Dal::readAll('EventCategory');
+        return $this->view($model, 'Views/EventCategory/Index.php');
     }
 
     public function readingOne($Id)
@@ -52,7 +53,7 @@ class EventCategoryController extends \ThreepennyMVC\Controller
     }
 
 
-    public function updatingOne($Id)
+    public function updateOne($Id)
     {
         $row = array(
             "Id" => $_POST['Id'],
@@ -65,7 +66,7 @@ class EventCategoryController extends \ThreepennyMVC\Controller
         return $this->view($model, 'Views/EventCategory/Index.php' );
     }
 
-    public function updateOne($Id)
+    public function updatingOne($Id)
     {
         $model['row'] = \AnOrmApart\Dal::readOne('EventCategory', $Id);
         $model['list'] = \AnOrmApart\Dal::readAll('EventCategory');

@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ThreepennyMVC\\' => array($vendorDir . '/threepennymvc'),
+    'FricFrac\\Controllers\\' => array($baseDir . '/../Controllers'),
     'AnOrmApart\\' => array($vendorDir . '/anormapart'),
 );

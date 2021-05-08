@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '17f212527860b8210fc6fe87437f1b61535bd580',
+    'reference' => '5fc6c503cb119fc97d9267f2e6773c7947f1c312',
     'name' => 'modernways/fric-frac',
   ),
   'versions' => 
@@ -44,7 +44,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '17f212527860b8210fc6fe87437f1b61535bd580',
+      'reference' => '5fc6c503cb119fc97d9267f2e6773c7947f1c312',
     ),
   ),
 );

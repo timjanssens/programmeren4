@@ -5,9 +5,9 @@ use ThreepennyMVC\FrontController;
 //include('../vendor/threepennymvc/Controller.php');
 //include('../vendor/anormapart/Dal.php');
 //include('../vendor/anormapart/Helpers.php');
-//include ('Controllers/AdminController.php');
-//include ('Controllers/EventController.php');
-//include ('Controllers/EventCategoryController.php');
+include ('Controllers/AdminController.php');
+include ('Controllers/EventController.php');
+include ('Controllers/EventCategoryController.php');
 $route = FrontController::getRouteData($_SERVER['REQUEST_URI'], 'Fricfrac', 'Admin', 'index');
 $view = FrontController::dispatch($route);
 ?>
@@ -31,9 +31,9 @@ $view = FrontController::dispatch($route);
     <h1 class="banner">Fric-frac</h1>
 </header>
 <?php echo $view();?>
-<footer class="page-footer">
-    <p>&copy ModernWays 2020</p>
-    <p>Opdracht Programmeren 4</p>
-</footer>
+<!--<footer class="page-footer">-->
+<!--    <p>&copy ModernWays 2020</p>-->
+<!--    <p>Opdracht Programmeren 4</p>-->
+<!--</footer>-->
 </body>
 </html>

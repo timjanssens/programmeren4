@@ -2,7 +2,7 @@
     <form id="form" method="" action="" class="detail">
         <nav class="command-panel">
             <h2 class="banner">EventCategorie</h2>
-            <a href="/EventCategory/UpdatingOne/{placeholder}" class="tile">
+            <a href="/EventCategory/UpdatingOne/<?php echo $model['row']['Id'];?>" class="tile">
                 <span class="icon-pencil"></span>
                 <span class="screen-reader-text">Updating One</span>
             </a>

@@ -11,6 +11,10 @@ class ComposerStaticInite1bf9190b72bcf8659fe29c88ef05253
         array (
             'ThreepennyMVC\\' => 14,
         ),
+        'F' => 
+        array (
+            'FricFrac\\Controllers\\' => 21,
+        ),
         'A' => 
         array (
             'AnOrmApart\\' => 11,
@@ -21,6 +25,10 @@ class ComposerStaticInite1bf9190b72bcf8659fe29c88ef05253
         'ThreepennyMVC\\' => 
         array (
             0 => __DIR__ . '/..' . '/threepennymvc',
+        ),
+        'FricFrac\\Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/../Controllers',
         ),
         'AnOrmApart\\' => 
         array (
