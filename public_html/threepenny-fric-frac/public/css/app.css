@@ -121,7 +121,7 @@ body, html {
 
 footer {
     width: 100%;
-    min-height: 10%;
+    min-height: 80px;
     color: rgb(250, 240, 230);
     /* linnen */
     background-color: rgb(65, 74, 76);
@@ -197,7 +197,7 @@ fieldset {
     font-size: large;
 }
 
-input[type=text], input[type=date], select, textarea, input[type=number] {
+input[type=text], input[type=date], select, textarea, input[type=number] , input[type=url]{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -247,7 +247,7 @@ main {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "section aside";
-        padding-bottom: 5rem;
+        padding-bottom: 3rem;
     }
 
     section {

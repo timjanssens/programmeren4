@@ -1,62 +1,69 @@
 <main>
     <section class="show-room entity">
-        <form id="form" method="post" action="/Event/updateOne/<?php echo $model['row']['Id']; ?>" class="detail">
+        <form id="form" method="" action="" class="detail">
             <nav class="command-panel">
                 <h2 class="banner">Event</h2>
-                <button type="submit" value="insert" name="uc" class='tile'>
-                    <span class="icon-floppy-disk"></span>
-                    <span class="screen-reader-text">Update One</span>
-                </button>
+                <a href="/Event/updatingOne/<?php echo $model['row']['Id']; ?>" class="tile">
+                    <span class="icon-pencil"></span>
+                    <span class="screen-reader-text">Updating One</span>
+                </a>
+                <a href="/Event/InsertingOne" class="tile">
+                    <span class="icon-plus"></span>
+                    <span class="screen-reader-text">Inserting One</span>
+                </a>
+                <a href="/Event/deleteOne/<?php echo $model['row']['Id']; ?>" class="tile">
+                    <span class="icon-bin"></span>
+                    <span class="screen-reader-text">Delete One</span>
+                </a>
                 <a href="/Event/Index" class="tile">
                     <span class="icon-cross"></span>
                     <span class="screen-reader-text">Annuleren</span>
                 </a>
             </nav>
             <fieldset>
-                <input type="hidden" id="Id" name="Id" value="<?php echo $model['row']['Id']; ?>"/>
                 <div>
                     <label for="Name">Naam</label>
                     <input id="Name" name="Name" type="text"
-                           value="<?php echo $model['row']['Name']; ?>" required/>
+                           value="<?php echo $model['row']['Name']; ?>" disabled/>
                 </div>
                 <div>
                     <label for="Location">Locatie</label>
                     <input id="Location" name="Location" type="text"
-                           value="<?php echo $model['row']['Location']; ?>" required/>
+                           value="<?php echo $model['row']['Location']; ?>" disabled/>
                 </div>
                 <div>
                     <label for="Starts">Start</label>
                     <input id="Starts" name="Starts" type="text"
-                           value="<?php echo $model['row']['Starts'];  ?>" required/>
+                           value="<?php echo $model['row']['Starts']; ?>" disabled/>
                 </div>
                 <div>
                     <label for="Ends">Einde</label>
                     <input id="Ends" name="Ends" type="text"
-                           value="<?php echo $model['row']['Ends']; ?>" />
+                           value="<?php echo $model['row']['Ends']; ?>" disabled/>
                 </div>
                 <div>
                     <label for="Image">Afbeelding</label>
                     <input id="Image" name="Image" type="text"
-                           value="<?php echo $model['row']['Image']; ?>" />
+                           value="<?php echo $model['row']['Image']; ?>" disabled/>
                 </div>
                 <div>
                     <label for="Description">Beschrijving</label>
                     <input id="Description" name="Description" type="text"
-                           value="<?php echo $model['row']['Description']; ?>" required/>
+                           value="<?php echo $model['row']['Description']; ?>" disabled/>
                 </div>
                 <div>
                     <label for="OrganiserName">Organisator naam</label>
                     <input id="OrganiserName" name="OrganiserName" type="text"
-                           value="<?php echo $model['row']['OrganiserName']; ?>" required/>
+                           value="<?php echo $model['row']['OrganiserName']; ?>" disabled/>
                 </div>
                 <div>
                     <label for="OrganiserDescription">Organisator beschrijving</label>
                     <input id="OrganiserDescription" name="OrganiserDescription" type="text"
-                           value="<?php echo $model['row']['OrganiserDescription']; ?>" required/>
+                           value="<?php echo $model['row']['OrganiserDescription']; ?>" disabled/>
                 </div>
                 <div>
                     <label for="EventCategoryId">Event Category</label>
-                    <select id="EventCategoryId" name="EventCategoryId">
+                    <select id="EventCategoryId" name="EventCategoryId" disabled>
                         <?php
                         foreach ($model['listEventCategory'] as $eventCategory) {
                             ?>
@@ -68,7 +75,7 @@
                 </div>
                 <div>
                     <label for="EventTopicId">Event Topic</label>
-                    <select id="EventTopicId" name="EventTopicId">
+                    <select id="EventTopicId" name="EventTopicId" disabled>
                         <?php
                         foreach ($model['listEventTopic'] as $eventTopic) {
                             ?>
@@ -81,7 +88,7 @@
             </fieldset>
             <div class="feedback"></div>
         </form>
-     </section>
+    </section>
     <aside>
         <?php include('ReadingAll.php'); ?>
     </aside>

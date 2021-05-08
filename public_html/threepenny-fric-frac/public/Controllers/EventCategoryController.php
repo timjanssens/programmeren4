@@ -21,10 +21,11 @@ class EventCategoryController extends \ThreepennyMVC\Controller
         return $this->view($model);
     }
 
-    public function createOne() {
+    public function createOne()
+    {
         $model = array('tableName' => 'EventCategory',
             'error' => 'Geen error');
-        $eventCategory = array (
+        $eventCategory = array(
             "Name" => $_POST['Name']);
 
         if (\AnOrmApart\Dal::create('EventCategory', $eventCategory, 'Name')) {
@@ -44,6 +45,7 @@ class EventCategoryController extends \ThreepennyMVC\Controller
         $model['message'] = \AnOrmApart\Dal::getMessage();
         return $this->view($model);
     }
+
     public function deleteOne($Id)
     {
         $model['row'] = \AnOrmApart\Dal::delete('EventCategory', $Id);
@@ -60,10 +62,10 @@ class EventCategoryController extends \ThreepennyMVC\Controller
             "Name" => $_POST['Name']
         );
 
-        $model['row'] = \AnOrmApart\Dal::update('EventCategory',$row, "Name");
+        $model['row'] = \AnOrmApart\Dal::update('EventCategory', $row, "Name");
         $model['list'] = \AnOrmApart\Dal::readAll('EventCategory');
         $model['message'] = \AnOrmApart\Dal::getMessage();
-        return $this->view($model, 'Views/EventCategory/Index.php' );
+        return $this->view($model, 'Views/EventCategory/Index.php');
     }
 
     public function updatingOne($Id)
@@ -71,11 +73,8 @@ class EventCategoryController extends \ThreepennyMVC\Controller
         $model['row'] = \AnOrmApart\Dal::readOne('EventCategory', $Id);
         $model['list'] = \AnOrmApart\Dal::readAll('EventCategory');
         $model['message'] = \AnOrmApart\Dal::getMessage();
-        return $this->view($model, 'Views/EventCategory/UpdatingOne.php' );
+        return $this->view($model, 'Views/EventCategory/UpdatingOne.php');
     }
-
-
-
 
 
 }

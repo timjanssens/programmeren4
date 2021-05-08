@@ -8,73 +8,97 @@ class EventController extends \ThreepennyMVC\Controller
 {
     public function index()
     {
-        $model = array(
-            'tableName' => 'Event',
-            'error' => 'Alles is prima verlopen',
-            'row' => array(
-                'Name' => '',
-                'Location' => '',
-                'StartDate' => '',
-                'StartTime' => '',
-                'EndDate' => '',
-                'EndTime' => '',
-                'Image' => '',
-                'Description' => '',
-                'OrganiserName' => '',
-                'OrganiserDescription' => '',
-                'EventCategoryId' => null,
-                'EventTopicId' => null,
-                'ListEventCategory' => null,
-                'ListEventTopic' => null
-            ),
-            'list' => array(
-                array('Id' => 1, 'Name' => 'PHP serieus', 'Location' => 'Antwerpen'),
-                array('Id' => 1, 'Name' => 'Bob Dylan in café De Kat', 'Location' => 'Antwerpen'),
-                array('Id' => 1, 'Name' => 'Boekvoorstelling Klaartje Schrijvers', 'Location' => 'Antwerpen'),
-                array('Id' => 1, 'Name' => 'Javacscript serieus', 'Location' => 'Antwerpen')
-            )
-        );
+        $model['list'] = \AnOrmApart\Dal::readAll('Event');
+        $model['message'] = \AnOrmApart\Dal::getMessage();
         return $this->view($model);
     }
 
-    public function updatingOne()
+    public function insertingOne()
+    {
+
+        $model['list'] = \AnOrmApart\Dal::readAll('Event');
+        $model['listEventCategory'] = \AnOrmApart\Dal::readAll('EventCategory');
+        $model['listEventTopic'] = \AnOrmApart\Dal::readAll('EventTopic');
+        $model['message'] = \AnOrmApart\Dal::getMessage();
+        return $this->view($model);
+    }
+
+    public function createOne()
     {
         $model = array(
             'tableName' => 'Event',
-            'error' => 'Geen',
-            'row' => array(
-                'Name' => 'PHP serieus',
-                'Location' => 'Antwerpen',
-                'Starts' => '2020-10-10 20:00',
-                'Ends' => '2020-10-11 22:00',
-                'Image' => 'images/php-serieus.png',
-                'Description' => 'Leren werken met ThreepennyMVC',
-                'OrganiserName' => 'Modern Ways',
-                'OrganiserDescription' => 'Teaching material',
-                'EventCategoryId' => 3,
-                'EventTopicId' => 4
-            ),
-            'listEventCategory' => array(
-                array('Id' => 1, 'Name' => 'Appearance or Signing'),
-                array('Id' => 2, 'Name' => 'Attraction Camp.'),
-                array('Id' => 3, 'Name' => 'Trip or Retreat'),
-                array('Id' => 4, 'Name' => 'Concert or Performance'),
-                array('Id' => 5, 'Name' => 'Course, Training or Workshop')
-            ),
-            'listEventTopic' => array(
-                array('Id' => 1, 'Name' => 'Auto, Boat & Air'),
-                array('Id' => 2, 'Name' => 'Business & Professional'),
-                array('Id' => 3, 'Name' => 'Charities & Causes'),
-                array('Id' => 4, 'Name' => 'Community & Culture'),
-                array('Id' => 5, 'Name' => 'Family & Education')
-            ),
-            'list' => array(
-                array('Id' => 1, 'Name' => 'PHP serieus', 'Location' => 'Antwerpen'),
-                array('Id' => 1, 'Name' => 'Bob Dylan in café De Kat', 'Location' => 'Antwerpen'),
-                array('Id' => 1, 'Name' => 'Boekvoorstelling Klaartje Schrijvers', 'Location' => 'Antwerpen'),
-                array('Id' => 1, 'Name' => 'Javacscript serieus', 'Location' => 'Antwerpen')
-            )
+            'error' => 'Geen'
         );
+        $Event = array(
+            "Name" => $_POST['Name'],
+            "Location" => $_POST['Location'],
+            "Starts" => $_POST['Starts'],
+            "Ends" => $_POST['Ends'],
+            "Image" => $_POST['Image'],
+            "Description" => $_POST['Description'],
+            "OrganiserName" => $_POST['OrganiserName'],
+            "OrganiserDescription" => $_POST['OrganiserDescription'],
+            "EventCategoryId" => $_POST['EventCategoryId'],
+            "EventTopicId" => $_POST['EventTopicId']
+        );
+        if (\AnOrmApart\Dal::create('Event', $Event, 'Name')) {
+            $model['message'] = "Rij toegevoegd! {$Event['Name']} is toegevoegd aan Event";
+        } else {
+            $model['message'] = "Oeps er is iets fout gelopen! Kan {$Event['Name']} niet toevoegen aan Event";
+            $model['error'] = \AnOrmApart\Dal::getMessage();
+        }
+        $model['list'] = \AnOrmApart\Dal::readAll('Event');
+        return $this->view($model, 'Views/Event/Index.php');
+    }
+
+    public function readingOne($Id)
+    {
+        $model['row'] = \AnOrmApart\Dal::readOne('Event', $Id);
+        $model['list'] = \AnOrmApart\Dal::readAll('Event');
+        $model['listEventCategory'] = \AnOrmApart\Dal::readAll('EventCategory');
+        $model['listEventTopic'] = \AnOrmApart\Dal::readAll('EventTopic');
+        $model['message'] = \AnOrmApart\Dal::getMessage();
         return $this->view($model);
     }
+
+    public function deleteOne($Id)
+    {
+        $model['row'] = \AnOrmApart\Dal::delete('Event', $Id);
+        $model['list'] = \AnOrmApart\Dal::readAll('Event');
+        $model['message'] = \AnOrmApart\Dal::getMessage();
+        return $this->view($model, 'Views/Event/Index.php');
+    }
+
+    public function updateOne($Id)
+    {
+        $row = array(
+            "Id" => $_POST['Id'],
+            "Name" => $_POST['Name'],
+            "Starts" => $_POST['Starts'],
+            "Ends" => $_POST['Ends'],
+            "Image" => $_POST['Image'],
+            "Description" => $_POST['Description'],
+            "OrganiserName" => $_POST['OrganiserName'],
+            "OrganiserDescription" => $_POST['OrganiserDescription'],
+            "EventCategoryId" => $_POST['EventCategoryId'],
+            "EventTopicId" => $_POST['EventTopicId']
+        );
+
+        $model['row'] = \AnOrmApart\Dal::update('Event', $row, "Name");
+        $model['list'] = \AnOrmApart\Dal::readAll('Event');
+        $model['message'] = \AnOrmApart\Dal::getMessage();
+        return $this->view($model, 'Views/Event/Index.php');
+    }
+
+    public function updatingOne($Id)
+    {
+        $model['row'] = \AnOrmApart\Dal::readOne('Event', $Id);
+        $model['list'] = \AnOrmApart\Dal::readAll('Event');
+        $model['listEventCategory'] = \AnOrmApart\Dal::readAll('EventCategory');
+        $model['listEventTopic'] = \AnOrmApart\Dal::readAll('EventTopic');
+        $model['message'] = \AnOrmApart\Dal::getMessage();
+        return $this->view($model, 'Views/Event/UpdatingOne.php');
+    }
+
+
 }
