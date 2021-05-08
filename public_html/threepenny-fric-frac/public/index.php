@@ -10,6 +10,7 @@ include ('Controllers/EventController.php');
 include ('Controllers/EventCategoryController.php');
 include ('Controllers/EventTopicController.php');
 include ('Controllers/PersonController.php');
+include ('Controllers/RoleController.php');
 $route = FrontController::getRouteData($_SERVER['REQUEST_URI'], 'Fricfrac', 'Admin', 'index');
 $view = FrontController::dispatch($route);
 ?>
