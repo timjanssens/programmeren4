@@ -21,4 +21,4 @@ Route::get('/', function () {
 
 //Route::resource('eventcategory','EventCategoryController');
 Route::resource('eventcategory','App\Http\Controllers\EventCategoryController');
-
+Route::resource('eventtopic','App\Http\Controllers\EventTopicController');
