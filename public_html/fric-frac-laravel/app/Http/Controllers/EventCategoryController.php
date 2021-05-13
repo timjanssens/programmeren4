@@ -7,7 +7,6 @@ namespace App\Http\Controllers;
 
 use App\EventCategory;
 use Illuminate\Http\Request;
-
 class EventCategoryController extends Controller
 {
     /**
@@ -44,52 +43,64 @@ class EventCategoryController extends Controller
         ]);
         EventCategory::create($request->all());
         return redirect()->route('eventcategory.index')
-
             ->with('success', 'EventCategory created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\EventCategory  $eventCategory
+     * @param  \App\Models\EventCategory  $eventCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(EventCategory $eventCategory)
+    public function show($id)
     {
-        //
+        $eventCategory = EventCategory::find($id);
+        return view('eventcategory.show', compact('eventCategory'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\EventCategory  $eventCategory
+     * @param  \App\Models\EventCategory  $eventCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(EventCategory $eventCategory)
+    public function edit($id)
     {
-        //
+        $eventCategory = EventCategory::find($id);
+        return view('eventcategory.edit', compact('eventCategory'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\EventCategory  $eventCategory
+     * @param  \App\Models\EventCategory  $eventCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EventCategory $eventCategory)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name'=>'required'
+        ]);
+        $eventCategory = EventCategory::find($id);
+        $eventCategory->name = $request->input('name');
+        $eventCategory->save();
+        return redirect()->route('eventcategory.index')
+            ->with('success', 'event category updated successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\EventCategory  $eventCategory
+     * @param  \App\Models\EventCategory  $eventCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EventCategory $eventCategory)
+    public function destroy($id)
     {
-        //
+        $eventCategory = EventCategory::find($id);
+        $eventCategory->delete();
+
+
+        return redirect()->route('eventcategory.index')->with('success', 'event category deleted successfully.');
     }
 }
