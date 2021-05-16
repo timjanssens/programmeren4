@@ -25,13 +25,13 @@
             <tr>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
-                <td >
+                <td>
                     <form method="POST" action="/eventtopic/{{$item->id}}">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <div class="form-group text-center">
-                            <a class="btn btn-success " href="/eventtopic/{{$item->id}}/edit"> Edit</a>
                             <a class="btn btn-primary " href="/eventtopic/{{$item->id}}"> View</a>
+                            <a class="btn btn-success " href="/eventtopic/{{$item->id}}/edit"> Edit</a>
                             <button type="submit" id="delete-user" class="btn btn-danger" value="Delete"> Delete
                             </button>
                         </div>

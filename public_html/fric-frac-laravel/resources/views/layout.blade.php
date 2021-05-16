@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<div class="container min-vh-100" style="min-height:calc(100vh - 202px); padding: 50px;">
+<div class="container min-vh-100" style="min-height:calc(100vh - 204px); padding: 50px;">
 
     @yield('content')
 
