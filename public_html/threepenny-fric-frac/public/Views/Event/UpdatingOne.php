@@ -26,13 +26,13 @@
                 </div>
                 <div>
                     <label for="Starts">Start</label>
-                    <input id="Starts" name="Starts" type="text"
-                           value="<?php echo $model['row']['Starts'];  ?>" required/>
+                    <input id="Starts" name="Starts" type="datetime-local"
+                           value="<?php echo date('Y-m-d\TH:i:s', strtotime($model['row']['Starts']));?>" required/>
                 </div>
                 <div>
                     <label for="Ends">Einde</label>
-                    <input id="Ends" name="Ends" type="text"
-                           value="<?php echo $model['row']['Ends']; ?>" />
+                    <input id="Ends" name="Ends" type="datetime-local"
+                           value="<?php echo date('Y-m-d\TH:i:s', strtotime($model['row']['Starts']));?>" />
                 </div>
                 <div>
                     <label for="Image">Afbeelding</label>
