@@ -41,13 +41,13 @@
             <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
                     <strong>Start:</strong>
-                    <input class="form-control" type="date" required id="starts" name="starts"/>
+                    <input class="form-control" type="datetime-local" required id="starts" name="starts"/>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
                     <strong>End:</strong>
-                    <input class="form-control" type="date" required id="ends" name="ends"/>
+                    <input class="form-control" type="datetime-local" required id="ends" name="ends"/>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">

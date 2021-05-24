@@ -42,13 +42,13 @@
             <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
                     <strong>Start:</strong>
-                    <input class="form-control" type="text" required id="starts" name="starts" value="{{$event->starts}}"/>
+                    <input class="form-control" type="datetime-local" required id="starts" name="starts" value="{{date('Y-m-d\TH:i:s', strtotime($event->starts))}}"/>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
                     <strong>End:</strong>
-                    <input class="form-control" type="text" required id="ends" name="ends" value="{{$event->ends}}"/>
+                    <input class="form-control" type="datetime-local" required id="ends" name="ends" value="{{date('Y-m-d\TH:i:s', strtotime($event->ends))}}"/>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">
