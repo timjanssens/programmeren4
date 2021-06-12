@@ -2,7 +2,7 @@
     <section class="show-room entity">
         <div class="detail">
             <nav class="command-panel">
-                <h2 class="banner">Event</h2>
+                <h2 class="banner">Persoon</h2>
                 <a href="/Person/InsertingOne" class="tile">
                     <span class="icon-plus"></span>
                     <span class="screen-reader-text">InsertingOne</span>

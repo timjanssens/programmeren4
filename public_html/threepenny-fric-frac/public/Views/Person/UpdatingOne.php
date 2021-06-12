@@ -62,7 +62,7 @@
                 </div>
                 <div>
                     <label for="Birthday">Geboortedatum</label>
-                    <input type="date"  id="Birthday" name="Birthday" value="<?php echo $model['row']['Birthday'];?>"/>
+                    <input type="date"  id="Birthday" name="Birthday" value="<?php echo date('Y-m-d', strtotime($model['row']['Birthday']));?>"/>
                 </div>
                 <div>
                     <label for="Rating">Tevredenheid</label>

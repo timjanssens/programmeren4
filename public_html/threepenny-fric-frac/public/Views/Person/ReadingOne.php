@@ -68,11 +68,13 @@
                 <div>
 
                     <label for="Phone1">Telefoon 1</label>
-                    <input type="text"  id="Phone1" name="Phone1" value="<?php echo $model['row']['Phone1'];?>" disabled />
+                    <input type="text"  id="Phone1" name="Phone1"
+                           value="<?php echo $model['row']['Phone1'];?>" disabled />
                 </div>
                 <div>
                     <label for="Birthday">Geboortedatum</label>
-                    <input type="date"  id="Birthday" name="Birthday" value="<?php echo $model['row']['Birthday'];?>" disabled/>
+                    <input type="text"  id="Birthday" name="Birthday"
+                           value="<?php echo $model['row']['Birthday'];?>" disabled/>
                 </div>
                 <div>
                     <label for="Rating">Tevredenheid</label>
